@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_29_185748) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_02_091538) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_185748) do
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "comments", "posts"
